@@ -14,22 +14,23 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "pedro@example.com",
-    href: "mailto:pedro@example.com",
+    value: "vanshikasri95@gmail.com",
+    href: "mailto:vanshikasri95@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "+91 8887220639",
+    href: "tel:+918887220639",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "India",
     href: "#",
   },
 ];
+
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -76,13 +77,13 @@ export const Contact = () => {
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
-      console.error("EmailJS error:", error);
-      setSubmitStatus({
-        type: "error",
-        message:
-          error.text || "Failed to send message. Please try again later.",
-      });
-    } finally {
+    console.error("EmailJS error:", err);
+    setSubmitStatus({
+      type: "error",
+      message:
+      err?.text || "Failed to send message. Please try again later.",
+  });
+}finally {
       setIsLoading(false);
     }
   };
@@ -100,9 +101,9 @@ export const Contact = () => {
             Get In Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Let's build{" "}
+            Let's connect {" "}
             <span className="font-serif italic font-normal text-white">
-              something great.
+              and collaborate.
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
@@ -243,8 +244,9 @@ export const Contact = () => {
               </div>
               <p className="text-muted-foreground text-sm">
                 I'm currently open to new opportunities and exciting projects.
-                Whether you need a full-time engineer or a freelance consultant,
-                let's talk!
+                Whether it's an internship, entry-level role, or a collaborative project,
+                I'd love to connect and learn together.
+
               </p>
             </div>
           </div>

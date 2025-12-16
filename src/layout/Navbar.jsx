@@ -34,7 +34,7 @@ export const Navbar = () => {
           href="#"
           className="text-xl font-bold tracking-tight hover:text-primary"
         >
-          PM<span className="text-primary">.</span>
+          VS<span className="text-primary">.</span>
         </a>
 
         {/* Desktop Nav */}
@@ -54,16 +54,17 @@ export const Navbar = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
+          <Button size="sm" asChild className="px-6">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=vanshikasri95@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact Me
+            </a>
+          </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 text-foreground cursor-pointer"
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </nav>
 
       {/* Mobile Menu */}
@@ -81,9 +82,19 @@ export const Navbar = () => {
               </a>
             ))}
 
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
+            <Button
+            asChild
+            className="w-full"
+            onClick={() => setIsMobileMenuOpen(false)}>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=vanshikasri95@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Contact Me
-            </Button>
+            </a>
+          </Button>
+
           </div>
         </div>
       )}
